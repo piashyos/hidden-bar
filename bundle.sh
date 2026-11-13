@@ -8,7 +8,7 @@ rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp "$(swift build -c release --show-bin-path)/HiddenBar" "$APP/Contents/MacOS/"
 xcrun actool "$PWD/AppIcon.icon" --compile "$APP/Contents/Resources" --platform macosx \
-    --minimum-deployment-target 14.0 --app-icon AppIcon --output-partial-info-plist "$PWD/build/icon.plist" \
+    --minimum-deployment-target 27.0 --app-icon AppIcon --output-partial-info-plist "$PWD/build/icon.plist" \
     --output-format human-readable-text
 cat > "$APP/Contents/Info.plist" <<PLIST
 <?xml version="1.0" encoding="UTF-8"?>
@@ -23,7 +23,7 @@ cat > "$APP/Contents/Info.plist" <<PLIST
     <key>CFBundleVersion</key><string>1</string>
     <key>CFBundleIconFile</key><string>AppIcon</string>
     <key>CFBundleIconName</key><string>AppIcon</string>
-    <key>LSMinimumSystemVersion</key><string>14.0</string>
+    <key>LSMinimumSystemVersion</key><string>27.0</string>
     <key>LSUIElement</key><true/>
 </dict>
 </plist>
